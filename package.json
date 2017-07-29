@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Web-Bakers/web-bakers#readme",
   "dependencies": {
+    "ejs": "^2.5.6",
     "express": "^4.15.3"
   }
 }
