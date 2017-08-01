@@ -1,0 +1,23 @@
+{
+  "name": "web-bakers",
+  "version": "1.0.0",
+  "description": "A web app ideas kitchen.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Web-Bakers/web-bakers.git"
+  },
+  "author": "Joe Previte, Rachel Wilson, Reuben Jones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Web-Bakers/web-bakers/issues"
+  },
+  "homepage": "https://github.com/Web-Bakers/web-bakers#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3"
+  }
+}

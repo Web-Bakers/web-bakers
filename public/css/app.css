@@ -1,0 +1,27 @@
+body {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 100%;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  color: #444;
+  font-size: 4rem;
+}
+
+.logo img {
+  vertical-align: -6px;
+  margin: 0 5px 0 0;
+}
+
+div {
+  margin: 0 auto;
+  width: 50%;
+  text-align: left;
+  margin-top: 15%;
+  font-size: 1.5em;
+}
+
+div p {
+  margin-left: 55px;
+}
