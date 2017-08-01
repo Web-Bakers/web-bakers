@@ -1,6 +1,8 @@
 // Initialize packages
-var express = require('express');
-var app = express();
+var express     = require('express'),
+		app         = express(),
+		bodyParser  = require('body-parser'),
+		mongoose    = require('mongoose');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
