@@ -1,10 +1,16 @@
+/* Global elements ------------------------------------ */
+
 html, body {
   font-family: 'Titillium Web', sans-serif;
   font-size: 16px;
 }
 
-.navbar + .container {
-  margin-top: 70px;
+
+
+/* Header --------------------------------------------- */
+
+.navbar + div {
+  margin-top: 51px;
 }
 
 .navbar-brand {
@@ -18,4 +24,10 @@ a.navbar-brand img {
   width: 32px;
   height: 32px;
   margin-right: 5px;
+}
+
+.page-title {
+  background: #ff7677;
+  color: #fff;
+  padding: 2rem 0;
 }
