@@ -1,6 +1,11 @@
 // Initialize packages
-var express = require('express');
-var app = express();
+var express     = require('express'),
+		app         = express(),
+		bodyParser  = require('body-parser'),
+		mongoose    = require('mongoose');
+
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
 
 // ----------------------------------------------------------
@@ -9,12 +14,12 @@ var app = express();
 
 // Homepage
 app.get('/', function(req, res) {
-  res.send('Welcome to Web-Bakers');
+  res.render('home');
 });
 
 // Catchall
 app.get('*', function(req, res) {
-  res.send('Recipe not found... try again!');
+  res.render('catchall');
 });
 
 
