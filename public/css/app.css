@@ -5,7 +5,10 @@ html, body {
   font-size: 16px;
 }
 
-
+h1 {
+  display: inline-block;
+  margin: 0;
+}
 
 /* Header --------------------------------------------- */
 
@@ -31,3 +34,15 @@ a.navbar-brand img {
   color: #fff;
   padding: 2rem 0;
 }
+
+
+/* Footer --------------------------------------------- */
+
+footer {
+  background: #5e6578;
+  color: #aaa;
+  padding: 3rem 0 2rem;
+  margin-top: 3rem;
+}
+
+
