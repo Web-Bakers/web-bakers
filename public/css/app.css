@@ -50,3 +50,24 @@ footer a {
 }
 
 
+/* Module: Ideas --------------------------------------------- */
+
+.idea-card {
+  border-bottom: solid 1px #eee;
+  padding: 2rem 0;
+}
+
+.idea-card:last-of-type {
+  border-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
