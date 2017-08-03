@@ -50,7 +50,7 @@ var ideas = [
 
 // Homepage
 app.get('/', function(req, res) {
-  res.render('home');
+  res.render('home', {ideas: ideas});
 });
 
 // Catchall
