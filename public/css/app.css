@@ -60,14 +60,28 @@ footer a {
   padding: 2rem;
 }
 
-.idea-submission input[type=text] {
+.idea-submission form {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.idea-submission input {
   display: inline-block;
   padding: 0.5rem;
-  width: 80%;
+}
+
+.idea-submission input[type=text] {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.idea-submission input[type=submit] {
+  padding: 0.5rem 3rem;
 }
 
 .idea-card {
-  border-bottom: solid 1px #eee;
+  border-top: solid 1px #eee;
   padding: 1rem 0 2rem;
 }
 
@@ -75,22 +89,27 @@ footer a {
   margin-top: 2rem;
 }
 
-.idea-card:last-of-type {
-  border-bottom: 0;
-}
 
-.filters {
+.filter-ideas {
   background: #f4f4f4;
   margin: 2rem 0;
   padding: 1rem 2rem;
 }
 
-.filters ul {
+.filter-ideas ul {
   list-style: none;
   padding: 0;
 }
 
+.sort-ideas {
+  display: flex;
+  margin: 2rem 0 0;
+  text-transform: uppercase;
+}
 
+.search-ideas {
+
+}
 
 
 

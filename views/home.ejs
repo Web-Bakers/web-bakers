@@ -18,7 +18,7 @@
       <div class="idea-submission">
         <form>
           <input type="text" name="idea" placeholder="Share your project idea...">
-          <input type="submit">
+          <input type="submit" class="btn btn-primary">
         </form>
       </div>
     </div>
@@ -26,7 +26,7 @@
   <div class="row">
       <!-- Filters nav -->
       <div class="col-xs-12 col-md-3">
-        <div class="filters">
+        <div class="filter-ideas">
           <h3>Filter Ideas By:</h3>
           <ul>
             <li><input type="checkbox" name="tag1" checked> Tag 1</li>
@@ -36,6 +36,18 @@
           </ul>
         </div>
       </div>
+
+      <!-- Sort by... -->
+      <div class="col-xs-12 col-md-9">
+        <div class="sort-ideas">
+          <p>Sort by:
+            <a href="#" class="active">new</a>
+            <a href="#">activity</a>
+            <a href="#">title</a>
+          </p>
+        </div>
+      </div>
+
       <!-- Ideas list -->
       <div class="col-xs-12 col-md-9">
         <% ideas.forEach(function(idea) { %>
