@@ -1,5 +1,6 @@
 <% include partials/header %>
 
+<!-- Title banner -->
 <div class="page-title">
   <div class="container">
     <div class="row">
@@ -10,9 +11,33 @@
   </div>
 </div>
 
+<!-- Primary content -->
 <div class="container">
   <div class="row">
-      <div class="col-lg-12">
+    <div class="col-sm-12">
+      <div class="idea-submission">
+        <form>
+          <input type="text" name="idea" placeholder="Share your project idea...">
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <!-- Filters nav -->
+      <div class="col-xs-12 col-md-3">
+        <div class="filters">
+          <h3>Filter Ideas By:</h3>
+          <ul>
+            <li><input type="checkbox" name="tag1" checked> Tag 1</li>
+            <li><input type="checkbox" name="tag2" checked> Tag 2</li>
+            <li><input type="checkbox" name="tag3" checked> Tag 3</li>
+            <li><input type="checkbox" name="tag4" checked> Tag 4</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Ideas list -->
+      <div class="col-xs-12 col-md-9">
         <% ideas.forEach(function(idea) { %>
           <div class="idea-card">
             <h3><%= idea.title %></h3>

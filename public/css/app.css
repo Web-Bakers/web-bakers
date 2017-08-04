@@ -10,11 +10,9 @@ h1 {
   margin: 0;
 }
 
-/* Header --------------------------------------------- */
 
-.navbar + div {
-  margin-top: 51px;
-}
+
+/* Header --------------------------------------------- */
 
 .navbar-brand {
   display: flex;
@@ -27,6 +25,10 @@ a.navbar-brand img {
   width: 32px;
   height: 32px;
   margin-right: 5px;
+}
+
+.navbar + div {
+  margin-top: 51px;
 }
 
 .page-title {
@@ -52,16 +54,41 @@ footer a {
 
 /* Module: Ideas --------------------------------------------- */
 
+.idea-submission {
+  background: #f4f4f4;
+  margin: 2rem 0 0;
+  padding: 2rem;
+}
+
+.idea-submission input[type=text] {
+  display: inline-block;
+  padding: 0.5rem;
+  width: 80%;
+}
+
 .idea-card {
   border-bottom: solid 1px #eee;
-  padding: 2rem 0;
+  padding: 1rem 0 2rem;
+}
+
+.idea-card:first-of-type {
+  margin-top: 2rem;
 }
 
 .idea-card:last-of-type {
   border-bottom: 0;
 }
 
+.filters {
+  background: #f4f4f4;
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+}
 
+.filters ul {
+  list-style: none;
+  padding: 0;
+}
 
 
 
