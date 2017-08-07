@@ -5,6 +5,7 @@ var express     = require('express'),
 		mongoose    = require('mongoose');
 
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 // ----------------------------------------------------------
