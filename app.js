@@ -42,8 +42,27 @@ var ideas = [
     author: "Rusty",
     dateSubmitted: "1/12/16",
   },
-]
+];
 
+  var tags = ["For Developers", "JavaScript", "Community", "Web App"];
+
+  var comments = [
+    {
+      author: "Joe P",
+      comment: "This sounds amazing!  Let's build!",
+      timeStamp: "6 hours ago"
+    },
+    {
+      author: "Chance Taken",
+      comment: "WOOOO!",
+      timeStamp: "2 days ago"
+    },
+    {
+      author: "Penelope Cruz",
+      comment: "Hmm, seems boring.",
+      timeStamp: "45 minutes ago"
+    }
+  ];
 // ----------------------------------------------------------
 // Routes
 // -----------------------------
@@ -51,6 +70,18 @@ var ideas = [
 // Homepage
 app.get('/', function(req, res) {
   res.render('home', {ideas: ideas});
+});
+
+app.get('/idea', function(req, res) {
+  res.render('ideaDetail', 
+    {
+      title: ideas[0].title, 
+      blurb: ideas[0].blurb, 
+      author: ideas[0].author,
+      date: ideas[0].dateSubmitted,
+      tags: tags,
+      comments: comments
+    })
 });
 
 // Catchall
