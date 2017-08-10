@@ -2,7 +2,13 @@
 var express     = require('express'),
 		app         = express(),
 		bodyParser  = require('body-parser'),
-		mongoose    = require('mongoose');
+		mongoose    = require('mongoose'),
+		User 				= require('./models/user.js'),
+		Idea 				= require('./models/idea.js'),
+		Comment 		= require('./models/comment.js'),
+		Project 		= require('./models/project.js');
+
+mongoose.connect("mongodb://localhost/web-bakers");
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
