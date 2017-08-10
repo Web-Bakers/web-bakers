@@ -49,17 +49,30 @@ var ideas = [
 // Routes
 // -----------------------------
 
-// Homepage
+// Homepage (Ideas)
 app.get('/', function(req, res) {
   res.render('home', {ideas: ideas});
+});
+
+// Projects
+app.get('/projects', function(req, res) {
+  res.render('projects');
+});
+
+app.post('/ideas', function(req, res) {
+  // Get data from form and add to ideas array
+  var title = req.body.ideaTitle || 'Test title';
+  var description = req.body.ideaDescription || 'Test description';
+  var newIdea = { title: title, blurb: description, author: 'Anonymous', dateSubmitted: 'Just Now'};
+  ideas.unshift(newIdea);
+  // Redirect to ideas page
+  res.redirect('/');
 });
 
 // Catchall
 app.get('*', function(req, res) {
   res.render('catchall');
 });
-
-
 
 // App listener
 app.listen(3000, function() {
