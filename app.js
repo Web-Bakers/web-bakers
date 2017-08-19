@@ -12,7 +12,7 @@ var express     = require('express'),
 /*added because of new Mongoose requirement. Please reference link below for reasoning.
 http://mongoosejs.com/docs/connections.html#use-mongo-client
 */
-var promise = mongoose.connect('mongodb://localhost/myapp', {
+var promise = mongoose.connect('mongodb://localhost/web_bakers', {
   useMongoClient: true,
 });
 
