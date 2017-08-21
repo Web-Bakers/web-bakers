@@ -26,7 +26,7 @@
   </div>
   <div class="row">
       <!-- Filters nav -->
-      <div class="col-xs-12 col-md-3">
+      <!-- <div class="col-xs-12 col-md-3">
         <div class="filter-ideas">
           <h3>Filter Ideas By:</h3>
           <ul>
@@ -36,10 +36,10 @@
             <li><input type="checkbox" name="tag4" checked> Tag 4</li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <!-- Sort by... -->
-      <div class="col-xs-12 col-md-9">
+      <div class="col-xs-12 col-md-12">
         <div class="sort-ideas">
           <p>Sort by:
             <a href="#" class="active">new</a>
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Ideas list -->
-      <div class="col-xs-12 col-md-9">
+      <div class="col-xs-12 col-md-12">
         <% ideas.forEach(function(idea) { %>
           <div class="idea-card">
             <div>
@@ -61,7 +61,7 @@
             <div>
               <p><%= idea.blurb %></p>
               <p>&mdash;<%= idea.author %></p>
-              <div class="actions">
+              <!--<div class="actions">
                 <div class="like-idea">
                   0
                   <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
@@ -81,7 +81,7 @@
                   <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                   Flag
                 </div>
-              </div>
+              </div>-->
             </div>
           </div>
         <%  }) %>
