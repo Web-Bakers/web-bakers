@@ -51,6 +51,7 @@ a.navbar-brand img {
 .page-title {
   background: #ff7677;
   color: #fff;
+  margin: 0 0 2rem;
   padding: 2rem 0;
 }
 
@@ -82,7 +83,7 @@ footer a {
 
 .idea-submission {
   background: #f4f4f4;
-  margin: 2rem 0 0;
+  margin: 0;
   padding: 2rem;
 }
 
