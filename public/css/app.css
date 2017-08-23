@@ -1,10 +1,30 @@
+/* Global elements ------------------------------------ */
+
 html, body {
   font-family: 'Titillium Web', sans-serif;
   font-size: 16px;
+  height: 100%;
 }
 
-.navbar + .container {
-  margin-top: 70px;
+body {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/* Utilities --------------------------------------------- */
+
+.displayNone {
+  display: none;
+}
+
+
+
+
+
+/* Header --------------------------------------------- */
+
+.wrap {
+  flex: 1 0 auto;
 }
 
 .navbar-brand {
@@ -19,3 +39,141 @@ a.navbar-brand img {
   height: 32px;
   margin-right: 5px;
 }
+
+.navbar + div {
+  margin-top: 51px;
+}
+
+.active {
+
+}
+
+.page-title {
+  background: #ff7677;
+  color: #fff;
+  margin: 0 0 2rem;
+  padding: 2rem 0;
+}
+
+
+/* Footer --------------------------------------------- */
+
+footer {
+  background: #eee;
+  color: #aaa;
+  padding: 3rem 0 0;
+  margin-top: 3rem;
+}
+
+footer h4 {
+  color: #333;
+}
+
+footer a {
+  color: #666;
+}
+
+.copyright {
+  border-top: solid 1px #ddd;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+/* Module: Ideas --------------------------------------------- */
+
+.idea-submission {
+  background: #f4f4f4;
+  margin: 0;
+  padding: 2rem;
+}
+
+.idea-submission form {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.idea-submission input {
+  padding: 0.5rem;
+  margin: 0 0 1rem;
+}
+
+.idea-submission input[type=text] {
+  flex: 1 0 100%;
+}
+
+.idea-submission input[type=submit] {
+  padding: 0.5rem 3rem;
+}
+
+.idea-card {
+  display: flex;
+  flex-flow: column nowrap;
+  border-top: solid 1px #eee;
+  padding: 1rem 0 2rem;
+}
+
+.idea-card:first-of-type {
+  margin-top: 2rem;
+}
+
+.idea-card > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.idea-card .date-submitted {
+  color: #ccc;
+  margin-top: 20px;
+  flex: 0 0 8rem;
+  text-align: right;
+}
+
+.idea-card .actions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  color: #aaa;
+}
+
+.filter-ideas {
+  background: #f4f4f4;
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+}
+
+.filter-ideas ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sort-ideas {
+  display: flex;
+  margin: 2rem 0 0;
+  text-transform: uppercase;
+}
+
+.sort-ideas a {
+  margin-left: 1rem;
+  padding-right: 1rem;
+  border-right: solid 1px #ddd;
+}
+
+.sort-ideas a:last-of-type {
+  border-right: 0;
+}
+
+.sort-ideas .active {
+  font-weight: bold;
+}
+
+.search-ideas {
+
+}
+
+
+
+
+
+
+
