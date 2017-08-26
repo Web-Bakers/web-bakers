@@ -89,7 +89,7 @@ var Idea = mongoose.model("Idea", ideaSchema);
     {
       author: "Joe P",
       comment: "This sounds amazing!  Let's build!",
-      timeStamp: "6 hours ago"
+      timeStamp: "12/12/16"
     },
     {
       author: "Chance Taken",
@@ -149,16 +149,17 @@ app.get('/login', function(req, res) {
   res.render('login')
 });
 
-app.get('/idea', function(req, res) {
-  res.render('ideaDetail',
-    {
-      title: ideas[0].title,
-      blurb: ideas[0].blurb,
-      author: ideas[0].author,
-      date: ideas[0].dateSubmitted,
-      tags: tags,
-      comments: comments
-    })
+// Show a single idea on a page
+app.get('/idea/:id', function(req, res) {
+  Idea.findById(req.params.id).populate("comments").exec(function(err, foundIdea){
+        if(err){
+            console.log(err);
+        } else {
+            console.log(foundIdea)
+            //render show template with that idea
+            res.render('ideaDetail', { idea: foundIdea, comments: comments, tags: tags });
+        }
+    });
 });
 
 // Catchall
