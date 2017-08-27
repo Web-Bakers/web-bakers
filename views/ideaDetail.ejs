@@ -1,0 +1,76 @@
+<% include partials/header %>
+
+<!-- Title banner -->
+<div class="page-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2></h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+
+  <div class="row idea-summary">
+    <div class="col-sm-12">
+      <div class="idea-blurb">
+        <h3 class="short-blurb"><%= idea.title %></h3>
+        <hr>
+        <p class="description">
+            <%= idea.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--Author and Tags-->
+  <div class="row idea-metadata">
+    <div class="col-sm-12">
+      <div class="ideator">
+        <p>Ideator: <a href="#"><%= idea.author %></a></p>
+        <p>Added to the kitchen: <%= idea.dateSubmitted %></p>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!--Comments-->
+
+  <!-- Comment list -->
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <% comments.forEach(function(comment) { %>
+        <div class="comment-card">
+          <div class="pull-left">
+            <p><a href="#"><%= comment.author %></a></p>
+          </div>
+          <div class="pull-right">
+            <p><%= comment.timeStamp %></p>
+          </div>
+          <br>
+          <h4><%= comment.comment %></h4>
+        </div>
+        <hr>
+      <%  }) %>
+    </div>
+  </div>
+
+  <!-- Add comments form -->
+  <div class="row comments">
+    <div class="col-sm-12 col-md-6">
+      <p>Add a Comment:</p>
+      <form action="/idea" method="POST">
+        <textarea class="form-control" name="addcomment" id="newcomment" cols="100" rows="7"></textarea>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Mix it up!">
+      </form>
+      <hr>
+    </div>
+  </div>
+
+</div><!-- End container div -->
+
+<% include partials/footer %>

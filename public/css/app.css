@@ -93,7 +93,7 @@ footer a {
   width: 100%;
 }
 
-.idea-submission input {
+.idea-submission input, .idea-submission textarea  {
   padding: 0.5rem;
   margin: 0 0 1rem;
 }

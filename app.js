@@ -24,7 +24,6 @@ app.set('view engine', 'ejs');
 // ----------------------------------------------------------
 // Test data (until we set up the db)
 // -----------------------------
-
 // var ideas = [
 //   {
 //     title: "Web app to collect project ideas",
@@ -84,6 +83,25 @@ var Idea = mongoose.model("Idea", ideaSchema);
 // 	}
 // );
 
+  var tags = ["For Developers", "JavaScript", "Community", "Web App"];
+
+  var comments = [
+    {
+      author: "Joe P",
+      comment: "This sounds amazing!  Let's build!",
+      timeStamp: "12/12/16"
+    },
+    {
+      author: "Chance Taken",
+      comment: "WOOOO!",
+      timeStamp: "2 days ago"
+    },
+    {
+      author: "Penelope Cruz",
+      comment: "Hmm, seems boring.",
+      timeStamp: "45 minutes ago"
+    }
+  ];
 // ----------------------------------------------------------
 // Routes
 // -----------------------------
@@ -96,7 +114,7 @@ app.get('/', function(req, res) {
     } else {
       res.render('home', {ideas: allIdeas});
     }
-  }); 
+  });
 });
 
 // Projects
@@ -129,6 +147,19 @@ app.get('/register', function(req, res) {
 // Login
 app.get('/login', function(req, res) {
   res.render('login')
+});
+
+// Show a single idea on a page
+app.get('/idea/:id', function(req, res) {
+  Idea.findById(req.params.id).populate("comments").exec(function(err, foundIdea){
+        if(err){
+            console.log(err);
+        } else {
+            console.log(foundIdea)
+            //render show template with that idea
+            res.render('ideaDetail', { idea: foundIdea, comments: comments, tags: tags });
+        }
+    });
 });
 
 // Catchall
