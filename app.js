@@ -59,15 +59,6 @@ app.set('view engine', 'ejs');
 
 
 //test db to see if Mongoose is working with Mongo
-//IDEA SCHEMA
-var ideaSchema = new mongoose.Schema({
-	title: String,
-  description: String,
-  author: String,
-  dateSubmitted: String
-});
-
-var Idea = mongoose.model("Idea", ideaSchema);
 
 // Idea.create(
 // 	{
@@ -122,11 +113,13 @@ app.get('/projects', function(req, res) {
   res.render('projects');
 });
 
+// Post new idea to main page/add to DB
 app.post('/ideas', function(req, res) {
   // Get data from form and add to db
   var title = req.body.ideaTitle;
   var description = req.body.ideaDescription;
-  var newIdea = { title: title, description: description, author: 'Anonymous', dateSubmitted: 'Just Now'};
+  var myDate = Date();
+  var newIdea = { title: title, description: description, author: 'Anonymous', createdAt: myDate};
   Idea.create(newIdea, function (err, newlyCreated) {
     //error check
     if (err) {
@@ -139,14 +132,58 @@ app.post('/ideas', function(req, res) {
   });
 });
 
-// Sign up
+// Signup Routes
+//====================
+// Display sign up form
 app.get('/register', function(req, res) {
   res.render('register')
 });
 
-// Login
+// Get data from sign up form and add to db
+app.post('/register', function (req, res) {
+  var userName = req.body.username;
+  var email = req.body.email;
+  var password = req.body.password;
+  var newUser = { username: userName, email: email, password: password};
+  User.create(newUser, function (err, newlyCreated) {
+    if (err) {
+      // TODO: Add message to user about error
+      console.log(err);
+    } else {
+      // Redirect to main page
+      // TODO: add welcome message?
+      res.redirect('/');
+    }
+  });    
+});
+
+// Login Routes
+//=====================
+// Display login form
 app.get('/login', function(req, res) {
   res.render('login')
+});
+
+// Get data from login form and verify user in db
+app.post('/login', function (req, res) {
+  var email = req.body.email;
+  var password = req.body.password;
+  User.findOne(email = email, function (err, foundUser) {
+    if (err) {
+      // TODO: Add message to user about error
+      console.log(err);
+    } else if (password != foundUser.password) {
+      // TODO: Add error message about password mismatch?
+      res.render('/login')
+    } else if (password == foundUser.password) {
+      // Redirect to main page
+      // TODO: add welcome message?
+      res.redirect('/');
+    } else {
+      //404
+      res.render('catchall');
+    }
+  });
 });
 
 // Show a single idea on a page

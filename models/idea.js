@@ -1,5 +1,3 @@
-/*
-temporarily commented out.
 var mongoose = require("mongoose");
 
 //SCHEMA SETUP
@@ -21,4 +19,4 @@ var ideaSchema = new mongoose.Schema({
     //Completed date
 });
 
-module.exports = mongoose.model("Idea", ideaSchema); */
+module.exports = mongoose.model("Idea", ideaSchema);
