@@ -55,15 +55,15 @@
 
       <!-- Ideas list -->
       <div class="col-xs-12 col-md-12">
-        <% ideas.forEach(function(idea) { %>
+        <% for (var i = ideas.length - 1; i >=0; i--) { %>
           <div class="idea-card">
             <div>
-              <h3><a href="/idea/<%= idea._id %>"><%= idea.title %></a></h3>
-              <p class="date-submitted"><%= idea.createdAt %></p>
+              <h3><a href="/idea/<%= ideas[i]._id %>"><%= ideas[i].title %></a></h3>
+              <p class="date-submitted"><%= ideas[i].createdAt %></p>
             </div>
             <div>
-              <p><%= idea.description %></p>
-              <p>&mdash;<%= idea.author %></p>
+              <p><%= ideas[i].description %></p>
+              <p>&mdash;<%= ideas[i].author %></p>
               <!--<div class="actions">
                 <div class="like-idea">
                   0
@@ -87,7 +87,7 @@
               </div>-->
             </div>
           </div>
-        <%  }) %>
+        <%  } %>
       </div>
     </div>
 </div>
