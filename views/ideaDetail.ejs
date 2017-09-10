@@ -1,0 +1,62 @@
+<% include partials/header %>
+
+<!-- Title banner -->
+<div class="page-break">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2></h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row idea-summary">
+    <div class="col-sm-12">
+      <div class="idea-blurb">
+        <h3 class="short-blurb"><%= idea.title %></h3>
+        <hr>
+        <p class="description">
+            <%= idea.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--Author and Tags-->
+  <div class="row idea-metadata">
+    <div class="col-sm-12">
+      <div class="ideator">
+        <p>Ideator: <a href="#"><%= idea.author.username %></a></p>
+        <p>Added to the kitchen: <%= idea.createdAt %></p>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Edit / Delete Idea -->
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="idea-actions">
+        <div>
+          <a href="../<%= idea._id %>/edit" class="btn btn-primary">Edit</a>
+          <form action="/<%= idea._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-link">Delete</button>
+          </form>
+        </div>
+        <hr>
+        <!-- Back button -->
+        <a href="/">&larr; Back to all ideas</a>
+      </div>
+    </div>
+  </div>
+
+
+
+</div><!-- End container div -->
+
+<% include partials/footer %>

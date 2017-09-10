@@ -16,11 +16,13 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="idea-submission">
-        <form action="/ideas" method="POST">
-          <input class="form-control" type="text" id="ideaTitle" name="ideaTitle" placeholder="Share your project idea...">
-          <input class="form-control displayNone" type="text" id="ideaDescription" name="ideaDescription" placeholder="Write a short description to explain your idea">
-          <input type="submit" class="btn btn-primary">
-        </form>
+          <form action="/ideas" method="POST">
+              <input class="form-control" type="text" id="ideaTitle" name="ideaTitle" placeholder="Share your project idea...">
+
+              <textarea class="form-control displayNone" type="text" id="ideaDescription" name="ideaDescription" placeholder="Explain your idea. Good descriptions give context and examples, to inspire readers." cols="100" rows="7"></textarea>
+
+              <input type="submit" class="btn btn-primary clear">
+          </form>
       </div>
     </div>
   </div>
@@ -52,15 +54,15 @@
 
       <!-- Ideas list -->
       <div class="col-xs-12 col-md-12">
-        <% ideas.forEach(function(idea) { %>
+        <% for (var i = ideas.length - 1; i >=0; i--) { %>
           <div class="idea-card">
             <div>
-              <h3><%= idea.title %></h3>
-              <p class="date-submitted"><%= idea.dateSubmitted %></p>
+              <h3><a href="/idea/<%= ideas[i]._id %>"><%= ideas[i].title %></a></h3>
+              <p class="date-submitted"><%= ideas[i].createdAt %></p>
             </div>
             <div>
-              <p><%= idea.blurb %></p>
-              <p>&mdash;<%= idea.author %></p>
+              <p><%= ideas[i].description %></p>
+              <p>&mdash; <%= ideas[i].author.username %></p>
               <!--<div class="actions">
                 <div class="like-idea">
                   0
@@ -84,7 +86,7 @@
               </div>-->
             </div>
           </div>
-        <%  }) %>
+        <%  } %>
       </div>
     </div>
 </div>
