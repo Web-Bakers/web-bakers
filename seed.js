@@ -5,31 +5,36 @@ var data = [
   {
     title: "Web app to collect project ideas",
     description: "People can share project ideas, for discussion, ranking, and build",
-    username: "Reuben",
+    author: {
+      username: "Reuben" },
     dateSubmitted: "23 minutes ago",
   },
   {
     title: "Goal tracker for FCC",
     description: "I want to be able to see where I'm at in the FCC curriculum, at a glance",
-    username: "Joe",
+    author: {
+      username: "Joe" },
     dateSubmitted: "7 hours ago",
   },
   {
     title: "Healthy meal choices!",
     description: "A tinder-style app that gives recipe suggestions and meal plans, based on preferences and diet",
-    username: "Reuben",
+    author: {
+      username: "Reuben" },
     dateSubmitted: "Yesterday",
   },
   {
     title: "Netflix for independent movie makers",
     description: "It's just like Netflix, but indie movie producers can upload their own films",
-    username: "Gandalf the Grey",
+    author: {
+      username: "Gandalf the Grey" },
     dateSubmitted: "15/5/17",
   },
   {
     title: "Hallow Puppy!",
     description: "An app to quickly visualize different halloween costumes on puppies. A little bit like the snapchat",
-    username: "Rusty",
+    author: {
+      username: "Rusty" },
     dateSubmitted: "1/12/16",
   },
 ];

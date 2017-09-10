@@ -72,13 +72,28 @@ app.post('/ideas', function(req, res) {
   // Get data from form and add to db
   var title = req.body.ideaTitle;
   var description = req.body.ideaDescription;
+  var currentUser = res.locals.currentUser;
+  var userInfo; 
+  // TODO: modify formatting on date display!  Do we need a library?
   var myDate = Date();
+  
+  // Allows for anonymous users to create ideas - until we can validate login and redirect
+  if (currentUser) {
+    userInfo = {
+      id: currentUser.id,
+      username: currentUser.username
+    }
+  } else {
+    userInfo = { username : "Anonymous" }
+  }
+
   var newIdea = {
     title: title,
     description: description,
-    author: 'Anonymous',
+    author: userInfo,
     createdAt: myDate,
   };
+
   Idea.create(newIdea, function(err, newlyCreated) {
     //error check
     if (err) {
@@ -99,23 +114,33 @@ app.get('/idea/:id', function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        console.log(foundIdea);
         //render show template with that idea
-        res.render('ideaDetail', {
-          idea: foundIdea,
-          //comments: comments,
-          //tags: tags,
+          console.log(foundIdea);
+          Idea.find({}, function(err, allIdeas) {
+            if (err) {
+              console.log(err);
+            } else {
+              res.render('ideaDetail', {
+              idea: foundIdea,
+              ideas: allIdeas, 
+              //comments: comments,
+              //tags: tags,
+            });
+          }
         });
       }
-    });
+  });
 });
 
 // EDIT IDEA ROUTE
 app.get('/:id/edit', function(req, res) {
   Idea.findById(req.params.id, function(err, foundIdea) {
-    res.render('edit', { idea: foundIdea });
+      Idea.find({}, function(err, allIdeas) {
+      res.render('edit', { idea: foundIdea, ideas: allIdeas });
+    });
   });
 });
+
 
 // UPDATE IDEA ROUTE
 app.put('/:id', function(req, res) {
@@ -147,7 +172,13 @@ app.delete('/:id', function(req, res) {
 //====================
 // Display sign up form
 app.get('/register', function(req, res) {
-  res.render('register');
+    Idea.find({}, function(err, allIdeas) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('register', { ideas: allIdeas });
+    }
+  });
 });
 
 // Get data from sign up form and add to db
@@ -172,7 +203,13 @@ app.post('/register', function(req, res) {
 //=====================
 // Display login form
 app.get('/login', function(req, res) {
-  res.render('login');
+  Idea.find({}, function(err, allIdeas) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('login', { ideas: allIdeas });
+    }
+  });
 });
 
 // Get data from login form and verify user in db
@@ -223,7 +260,13 @@ function isLoggedIn(req, res, next) {
 
 // Catchall
 app.get('*', function(req, res) {
-  res.render('catchall');
+  Idea.find({}, function(err, allIdeas) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('catchall', { ideas: allIdeas });
+    }
+  });
 });
 
 // ----------------------------------------------------------
