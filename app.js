@@ -73,10 +73,10 @@ app.post('/ideas', function(req, res) {
   var title = req.body.ideaTitle;
   var description = req.body.ideaDescription;
   var currentUser = res.locals.currentUser;
-  var userInfo; 
+  var userInfo;
   // TODO: modify formatting on date display!  Do we need a library?
   var myDate = Date();
-  
+
   // Allows for anonymous users to create ideas - until we can validate login and redirect
   if (currentUser) {
     userInfo = {
@@ -122,7 +122,7 @@ app.get('/idea/:id', function(req, res) {
             } else {
               res.render('ideaDetail', {
               idea: foundIdea,
-              ideas: allIdeas, 
+              ideas: allIdeas,
               //comments: comments,
               //tags: tags,
             });
