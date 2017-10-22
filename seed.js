@@ -7,35 +7,35 @@ var data = [
     description: "People can share project ideas, for discussion, ranking, and build",
     author: {
       username: "Reuben" },
-    dateSubmitted: "23 minutes ago",
+    createdAt: "Wed Mar 25 2016 07:55:21 GMT-0700 (PDT)",
   },
   {
     title: "Goal tracker for FCC",
     description: "I want to be able to see where I'm at in the FCC curriculum, at a glance",
     author: {
       username: "Joe" },
-    dateSubmitted: "7 hours ago",
+    createdAt: "Wed May 18 2017 07:55:21 GMT-0700 (PDT)",
   },
   {
     title: "Healthy meal choices!",
     description: "A tinder-style app that gives recipe suggestions and meal plans, based on preferences and diet",
     author: {
       username: "Reuben" },
-    dateSubmitted: "Yesterday",
+    createdAt: "Wed Oct 11 2017 07:55:21 GMT-0700 (PDT)",
   },
   {
     title: "Netflix for independent movie makers",
     description: "It's just like Netflix, but indie movie producers can upload their own films",
     author: {
       username: "Gandalf the Grey" },
-    dateSubmitted: "15/5/17",
+    createdAt: "Wed Oct 15 2017 07:55:21 GMT-0700 (PDT)",
   },
   {
     title: "Hallow Puppy!",
     description: "An app to quickly visualize different halloween costumes on puppies. A little bit like the snapchat",
     author: {
       username: "Rusty" },
-    dateSubmitted: "1/12/16",
+    createdAt: "Wed Oct 17 2017 07:55:21 GMT-0700 (PDT)",
   },
 ];
 
@@ -77,7 +77,7 @@ function seedDB(){
                 }
             });
         });
-    }); 
+    });
 }
 
 module.exports = seedDB;
