@@ -1,48 +1,5 @@
 <% include partials/header %>
-<% include functions %>
-<%
-
-  // Format JS Dates. Eg. 10 October, 1978
-  function formatDate(date) {
-    var monthNames = [
-      "January", "February", "March",
-      "April", "May", "June", "July",
-      "August", "September", "October",
-      "November", "December"
-    ];
-
-    var day = date.getDate();
-    var monthIndex = date.getMonth();
-    var year = date.getFullYear();
-
-    return day + ' ' + monthNames[monthIndex] + ', ' + year;
-  }
-
-  // Format post time. Eg. 10 minutes ago
-  function timeSince(date) {
-    // Define time intervals
-    var seconds = Math.floor((new Date() - date) / 1000);
-    var minutes = Math.round(seconds / 60);
-    var hours = Math.round(minutes / 60);
-    var days = Math.round(hours / 24);
-
-    // Return appropriate interval
-    if (days > 6) {
-      return formatDate(date);
-    } else if (days >= 1) {
-      // Use appropriate singular/plural
-      return days + (days === 1 ? " day" : " days") + " ago";
-    } else if (hours >= 1) {
-      // Use appropriate singular/plural
-      return hours + (hours === 1 ? " hour" : " hours") + " ago";
-    } else if (minutes > 1) {
-      return minutes + " minutes ago";
-    } else {
-      return "Just now";
-    }
-  }
-
-%>
+<% include ./functions %>
 
 <!-- Title banner -->
 <div class="page-title">
