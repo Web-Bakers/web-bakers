@@ -11,7 +11,8 @@ var ideaSchema = new mongoose.Schema({
             ref: "User"
         },
         username: String
-    }
+    },
+    display: {type: Boolean, default: true}
     //Add comments to this later...
     //Add tags 
     //Add projects
