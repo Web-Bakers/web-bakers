@@ -25,11 +25,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 app.use(flash());
-// app.use(function(req, res, next){
-//     res.locals.success_messages = req.flash('success_messages');
-//     res.locals.error_messages = req.flash('error_messages');
-//     next();
-// });
 seedDB();
 
 // PASSPORT CONFIGURATION
