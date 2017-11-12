@@ -20,7 +20,7 @@
           <form action="/ideas" method="POST">
               <input class="form-control" type="text" id="ideaTitle" name="ideaTitle" placeholder="Share your project idea...">
 
-              <textarea id="home-page-idea-submission" class="form-control displayNone" type="text" id="ideaDescription" name="ideaDescription" placeholder="Explain your idea. Good descriptions give context and examples, to inspire readers." cols="100" rows="7"></textarea>
+              <textarea class="form-control displayNone" type="text" id="ideaDescription" name="ideaDescription" placeholder="Explain your idea. Good descriptions give context and examples, to inspire readers." cols="100" rows="7"></textarea>
 
               <input type="submit" class="btn btn-primary clear">
           </form>
@@ -99,7 +99,7 @@
       $('#ideaDescription').slideDown(200);
     });
 
-    $("#home-page-idea-submission").on("keydown", function (event) {
+    $("#ideaDescription").on("keydown", function (event) {
             if ((event.ctrlKey || event.metaKey) && (event.keyCode == 13 || event.keyCode == 10)) {
               console.log('hello there my friend');
               this.form.submit();

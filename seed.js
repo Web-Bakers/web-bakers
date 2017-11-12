@@ -8,6 +8,8 @@ var data = [
     author: {
       username: "Reuben" },
     createdAt: "Wed Mar 25 2016 07:55:21 GMT-0700 (PDT)",
+    display: true
+
   },
   {
     title: "Goal tracker for FCC",
@@ -15,6 +17,7 @@ var data = [
     author: {
       username: "Joe" },
     createdAt: "Wed May 18 2017 07:55:21 GMT-0700 (PDT)",
+    display: true
   },
   {
     title: "Healthy meal choices!",
@@ -22,6 +25,7 @@ var data = [
     author: {
       username: "Reuben" },
     createdAt: "Wed Oct 11 2017 07:55:21 GMT-0700 (PDT)",
+    display: true
   },
   {
     title: "Netflix for independent movie makers",
@@ -29,6 +33,7 @@ var data = [
     author: {
       username: "Gandalf the Grey" },
     createdAt: "Wed Oct 15 2017 07:55:21 GMT-0700 (PDT)",
+    display: true
   },
   {
     title: "Hallow Puppy!",
@@ -36,6 +41,7 @@ var data = [
     author: {
       username: "Rusty" },
     createdAt: "Wed Oct 17 2017 07:55:21 GMT-0700 (PDT)",
+    display: true
   },
 ];
 

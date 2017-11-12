@@ -53,7 +53,7 @@ app.use(function(req, res, next) {
 
 // Homepage (Ideas)
 app.get('/', function(req, res) {
-  Idea.find({}, function(err, allIdeas) {
+  Idea.find({display:true}, function(err, allIdeas) {
     if (err) {
       console.log(err);
     } else {
@@ -74,7 +74,6 @@ app.post('/ideas', function(req, res) {
   var description = req.body.ideaDescription;
   var currentUser = res.locals.currentUser;
   var userInfo;
-  // TODO: modify formatting on date display!  Do we need a library?
   var myDate = new Date();
 
   // Allows for anonymous users to create ideas - until we can validate login and redirect
@@ -84,7 +83,7 @@ app.post('/ideas', function(req, res) {
       username: currentUser.username
     }
   } else {
-    userInfo = { username : "Anonymous" }
+    return res.redirect('/register');
   }
 
   var newIdea = {
@@ -116,7 +115,7 @@ app.get('/idea/:id', function(req, res) {
       } else {
         //render show template with that idea
           console.log(foundIdea);
-          Idea.find({}, function(err, allIdeas) {
+          Idea.find({display: true}, function(err, allIdeas) {
             if (err) {
               console.log(err);
             } else {
@@ -135,7 +134,7 @@ app.get('/idea/:id', function(req, res) {
 // EDIT IDEA ROUTE
 app.get('/:id/edit', function(req, res) {
   Idea.findById(req.params.id, function(err, foundIdea) {
-      Idea.find({}, function(err, allIdeas) {
+      Idea.find({display: true}, function(err, allIdeas) {
       res.render('edit', { idea: foundIdea, ideas: allIdeas });
     });
   });
@@ -172,7 +171,7 @@ app.delete('/:id', function(req, res) {
 //====================
 // Display sign up form
 app.get('/register', function(req, res) {
-    Idea.find({}, function(err, allIdeas) {
+    Idea.find({display: true}, function(err, allIdeas) {
     if (err) {
       console.log(err);
     } else {
@@ -203,7 +202,7 @@ app.post('/register', function(req, res) {
 //=====================
 // Display login form
 app.get('/login', function(req, res) {
-  Idea.find({}, function(err, allIdeas) {
+  Idea.find({display: true}, function(err, allIdeas) {
     if (err) {
       console.log(err);
     } else {
@@ -260,7 +259,7 @@ function isLoggedIn(req, res, next) {
 
 // Catchall
 app.get('*', function(req, res) {
-  Idea.find({}, function(err, allIdeas) {
+  Idea.find({display: true}, function(err, allIdeas) {
     if (err) {
       console.log(err);
     } else {
