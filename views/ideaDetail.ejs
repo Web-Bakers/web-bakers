@@ -44,7 +44,7 @@
       <div class="idea-actions">
         <div>
           <% if (!currentUser) {%>
-            <p>Want to add your own ideas?  <a href="/register" class="btn btn-primary">Sign Up</a></p>
+            <p>Want to add your own ideas? <a href="/register" class="btn btn-primary">Sign Up</a></p>
           <% } else if (currentUser.username === idea.author.username) { %>
             <a href="../<%= idea._id %>/edit" class="btn btn-primary">Edit</a>
             <form action="/<%= idea._id %>?_method=DELETE" method="POST">
