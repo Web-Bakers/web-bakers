@@ -2,13 +2,13 @@
 
 Follow these steps to run this app on your personal machine!  Instructions are split into 2 sections:
 
-1. [Environment Setup](#Environment-Setup)
+1. [Environment Setup](#environment-setup)
     
     - Project Requirements 
     - Download the Project
     - Setup Local Environment 
 
-2. [Run Web Bakers](#Run-Web-Bakers)
+2. [Run Web Bakers](#run-web-bakers)
 
 ## Environment Setup
 
