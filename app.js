@@ -206,7 +206,7 @@ app.get('/login', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render('login', { ideas: allIdeas });
+      res.render('login', { ideas: allIdeas, message: "You MESSED UP!"});
     }
   });
 });
@@ -231,6 +231,7 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
+  req.flash("error", "Please login first!")
   res.redirect('/login');
 }
 
