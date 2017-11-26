@@ -73,4 +73,4 @@ Below are examples of wireframes from the initial design stage of our project.
 
 Future testing goals include implementing unit and acceptance tests using the mocha.js and chai.js frameworks.
 
-Last Updated: 11/25/2017
+Last Updated: 11/26/2017
