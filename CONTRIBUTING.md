@@ -18,6 +18,7 @@ We are using a feature branch workflow, as defined in this [guide to using git](
 
 Follow this basic procedure:
 
+- Select or create an open [issue](https://github.com/Web-Bakers/web-bakers/issues) to work on, and assign yourself to that issue.  
 - Make sure your local develop branch is up to date with the remote develop branch.
 
     ```
