@@ -15,7 +15,7 @@ var express       = require('express'),
 
 var ideaRoutes    = require('./routes/ideas'),
     commentRoutes = require('./routes/comments'),
-    authRoutes    = require('./routes/index')
+    indexRoutes    = require('./routes/index')
 /*added because of new Mongoose requirement. Please reference link below for reasoning.
 http://mongoosejs.com/docs/connections.html#use-mongo-client
 */
@@ -71,8 +71,8 @@ app.use(function(req, res, next) {
 //   });
 // });
 
-app.use(authRoutes);
 app.use(ideaRoutes);
+app.use(indexRoutes);
 app.use(commentRoutes);
 
 // ----------------------------------------------------------
