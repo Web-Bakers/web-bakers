@@ -90,8 +90,6 @@ Below are examples of wireframes from the initial design stage of our project.
 
 Future testing goals include implementing unit and acceptance tests using the mocha.js and chai.js frameworks.
 
-<hr>
-
 ## Contributors
 
 The Web Bakers team is made up of Reuben Jones, Joe Previte and Rachel Wilson, also affectionately known as the Future Coding Wizards. This project began as a team challenge during July 2017, as part of the [Chingu Developer Network's](https://chingu-cohorts.github.io/chingu-directory/) cohort called Voyage-1.  We continue to build on it for fun and hope you like it too.
@@ -103,4 +101,5 @@ Licensed under GPL.
 Copyright :copyright: 2017 Reuben Jones, Joe Previte, Rachel Wilson
 
 <hr>
+
 Last Updated: 11/28/2017
