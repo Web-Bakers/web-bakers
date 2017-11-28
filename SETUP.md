@@ -129,4 +129,6 @@ Follow these steps to run this app on your personal machine!  Instructions are s
 _____________________________
 If you have trouble with any of these steps, please [open a new issue](https://github.com/Web-Bakers/web-bakers/issues) describing what went wrong.
 
-If you are ready to code, check out our [Contribution Guidelines](#) for next steps!
+If you are ready to code, check out our [Contribution Guidelines](https://github.com/Web-Bakers/web-bakers/blob/develop/CONTRIBUTING.md) for next steps!
+
+Last updated: 11/25/2017
