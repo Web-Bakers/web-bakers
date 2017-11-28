@@ -13,6 +13,9 @@ var express       = require('express'),
   Project         = require('./models/project'),
   seedDB          = require('./seed');
 
+var ideaRoutes    = require('./routes/ideas'),
+    commentRoutes = require('./routes/comments'),
+    authRoutes    = require('./routes/index')
 /*added because of new Mongoose requirement. Please reference link below for reasoning.
 http://mongoosejs.com/docs/connections.html#use-mongo-client
 */
@@ -47,12 +50,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-// ----------------------------------------------------------
-// Routes
-// -----------------------------
-
-
-
 // app.post('/login', function (req, res) {
 //   var email = req.body.email;
 //   var password = req.body.password;
@@ -73,19 +70,6 @@ app.use(function(req, res, next) {
 //     }
 //   });
 // });
-
-
-
-// Catchall
-app.get('*', function(req, res) {
-  Idea.find({display: true}, function(err, allIdeas) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('catchall', { ideas: allIdeas });
-    }
-  });
-});
 
 // ----------------------------------------------------------
 // App listener
