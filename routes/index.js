@@ -1,7 +1,13 @@
+var express = require('express');
+var router = express.Router();
+var passport = require('passport');
+var User = require('../models/user');
+var Idea = require('../models/idea');
+
 // AUTH Routes
 //====================
 // Display sign up form
-app.get('/register', function (req, res) {
+router.get('/register', function (req, res) {
     Idea.find({ display: true }, function (err, allIdeas) {
         if (err) {
             console.log(err);
@@ -12,7 +18,7 @@ app.get('/register', function (req, res) {
 });
 
 // Get data from sign up form and add to db
-app.post('/register', function (req, res) {
+router.post('/register', function (req, res) {
     var newUser = new User({
         username: req.body.username,
         email: req.body.email,
@@ -32,7 +38,7 @@ app.post('/register', function (req, res) {
 // Login Routes
 //=====================
 // Display login form
-app.get('/login', function (req, res) {
+router.get('/login', function (req, res) {
     Idea.find({ display: true }, function (err, allIdeas) {
         if (err) {
             console.log(err);
@@ -43,7 +49,7 @@ app.get('/login', function (req, res) {
 });
 
 // Get data from login form and verify user in db
-app.post(
+router.post(
     '/login',
     passport.authenticate('local', {
         successRedirect: '/',
@@ -53,13 +59,13 @@ app.post(
     function (req, res) { });
 
 // logic route
-app.get('/logout', function (req, res) {
+router.get('/logout', function (req, res) {
     req.logout();
     res.redirect('/');
 });
 
 // Catchall
-app.get('*', function (req, res) {
+router.get('*', function (req, res) {
     Idea.find({ display: true }, function (err, allIdeas) {
         if (err) {
             console.log(err);
@@ -71,7 +77,7 @@ app.get('*', function (req, res) {
 
 // Projects
 // Commented out because not in use right now (11/28/2017)
-// app.get('/projects', function (req, res) {
+// router.get('/projects', function (req, res) {
 //     res.render('projects');
 // });
 
@@ -83,3 +89,4 @@ function isLoggedIn(req, res, next) {
     res.redirect('/login');
 }
 
+module.exports = router;

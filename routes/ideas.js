@@ -1,4 +1,5 @@
-var express = require("express");
+var express = require('express');
+var Idea = require('../models/idea');
 var router = express.Router();
 
 //HOMEPAGE - show all ideas
