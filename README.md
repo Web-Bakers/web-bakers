@@ -2,17 +2,21 @@
 
 <h4>Web Bakers is an ideas kitchen that connects great project ideas with people who can make them happen.<h4>
 
+
 # Table of Contents
 1. [Elevator Pitch](#elevator-pitch)
 2. [Brief](#brief)
-3. [Wireframes](#wireframes)
-4. [Pageflow Diagrams](#pageflow-diagrams)
-5. [User Stories and Test Plan](#user-stories-and-test-plan)
+3. [Technologies Used](#technologies-used)
+4. [Wireframes](#wireframes)
+5. [Pageflow Diagrams](#pageflow-diagrams)
+6. [User Stories and Test Plan](#user-stories-and-test-plan)
+7. [Contributors](#contributors)
+8. [License](#license)
 
 ## Elevator Pitch
 
 <b>A platform for your programming project ideas - at every stage of the build process.</b>
-<p>Web Bakers is an ideas kitchen in a sharing economy. Contribute your vision, discuss common challenges, and collaborate with other developers and designers on the projects that inspire you. Struggling with your own great idea? <a href="http://www.jamesaltucher.com/2014/05/the-ultimate-guide-for-becoming-an-idea-machine/">Exercise your idea muscle.</a></p>
+<p>Web Bakers is an ideas kitchen in a sharing economy. Contribute your vision, discuss common challenges, and collaborate with other developers and designers on the projects that inspire you. Share your successes and see how other developers approached the same problem.  Struggling with your own great idea? <a href="http://www.jamesaltucher.com/2014/05/the-ultimate-guide-for-becoming-an-idea-machine/">Exercise your idea muscle.</a></p>
 
 ## Brief
 
@@ -28,6 +32,17 @@ We are targeting developers, designers, and other creative types (collectively r
 <p>Our ideator audience includes teens and adults of any socioeconomic class, age, race, ability level and skill level who have access to a mobile device or computer.  Although our core developer team is based in North America, geographic location for our users is unlimited, and we encourage international participation.</p>
 
 <p>Web Bakers ideators will be able to access the app through our website on a computer, smartphone, or tablet.  At this time, we do not anticipate creating a version for download as a mobile app.  We hope to achieve a clean, modern, look and feel.  Functionality and ease of use are the main UI goals.  We are inspired to design a user-friendly interface for communicating ideas that is similar in feel and function to reddit.</p>
+
+## Technologies Used
+
+For this project, we are using the MEN stack. 
+
+1. Javascript
+2. Express
+3. Node
+4. MongoDB
+
+Currently, we are running the app locally, but have a stretch goal of deployment on Heroku coming soon!
 
 ## Wireframes
 
@@ -67,7 +82,7 @@ Below are examples of wireframes from the initial design stage of our project.
 | Sort ideas by Popularity (number of likes) or Activity (number of comments) | Stretch Goal | Not Passing :red_circle: | 
 | Add tags to my ideas or finished projects, so that other users can find my content | Stretch Goal | Not Passing :red_circle: |
 | Filter posted ideas by subject tags | Stretch Goal | Not Passing :red_circle: |
-| Reset my password and have a new one emailed to me | Stretch Goal | Not Passing :red_circle: |
+| Reset my password | Stretch Goal | Not Passing :red_circle: |
 
 
 </div>
@@ -76,4 +91,16 @@ Below are examples of wireframes from the initial design stage of our project.
 Future testing goals include implementing unit and acceptance tests using the mocha.js and chai.js frameworks.
 
 <hr>
-Last Updated: 11/27/2017
+
+## Contributors
+
+The Web Bakers team is made up of Reuben Jones, Joe Previte and Rachel Wilson, also affectionately known as the Future Coding Wizards. This project began as a team challenge during July 2017, as part of the [Chingu Developer Network's](https://chingu-cohorts.github.io/chingu-directory/) cohort called Voyage-1.  We continue to build on it for fun and hope you like it too.
+
+## License
+
+Licensed under GPL.
+
+Copyright :copyright: 2017 Reuben Jones, Joe Previte, Rachel Wilson
+
+<hr>
+Last Updated: 11/28/2017
