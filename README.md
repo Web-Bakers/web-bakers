@@ -1,6 +1,6 @@
 # Web Bakers
 
-<h4>Web Bakers is an ideas kitchen that kneads, preps, and showcases your projects.<h4>
+<h4>Web Bakers is an ideas kitchen that connects great project ideas with people who can make them happen.<h4>
 
 # Table of Contents
 1. [Elevator Pitch](#elevator-pitch)
@@ -67,10 +67,13 @@ Below are examples of wireframes from the initial design stage of our project.
 | Sort ideas by Popularity (number of likes) or Activity (number of comments) | Stretch Goal | Not Passing :red_circle: | 
 | Add tags to my ideas or finished projects, so that other users can find my content | Stretch Goal | Not Passing :red_circle: |
 | Filter posted ideas by subject tags | Stretch Goal | Not Passing :red_circle: |
-|
+| Reset my password and have a new one emailed to me | Stretch Goal | Not Passing :red_circle: |
+
 
 </div>
 
+
 Future testing goals include implementing unit and acceptance tests using the mocha.js and chai.js frameworks.
 
-Last Updated: 11/25/2017
+<hr>
+Last Updated: 11/27/2017
