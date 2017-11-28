@@ -71,6 +71,10 @@ app.use(function(req, res, next) {
 //   });
 // });
 
+app.use(authRoutes);
+app.use(ideaRoutes);
+app.use(commentRoutes);
+
 // ----------------------------------------------------------
 // App listener
 // -----------------------------
