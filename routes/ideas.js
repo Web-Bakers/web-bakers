@@ -1,5 +1,8 @@
+var express = require("express");
+var router = express.Router();
+
 //HOMEPAGE - show all ideas
-app.get('/', function (req, res) {
+router.get('/', function (req, res) {
     Idea.find({ display: true }, function (err, allIdeas) {
         if (err) {
             console.log(err);
@@ -10,7 +13,7 @@ app.get('/', function (req, res) {
 });
 
 // Post new idea to main page/add to DB
-app.post('/ideas', function (req, res) {
+router.post('/ideas', function (req, res) {
     // Get data from form and add to db
     var title = req.body.ideaTitle;
     var description = req.body.ideaDescription;
@@ -48,7 +51,7 @@ app.post('/ideas', function (req, res) {
 });
 
 // Show a single idea on a page
-app.get('/idea/:id', function (req, res) {
+router.get('/idea/:id', function (req, res) {
     Idea.findById(req.params.id)
         .populate('comments')
         .exec(function (err, foundIdea) {
@@ -74,7 +77,7 @@ app.get('/idea/:id', function (req, res) {
 });
 
 // EDIT IDEA ROUTE
-app.get('/:id/edit', function (req, res) {
+router.get('/:id/edit', function (req, res) {
     Idea.findById(req.params.id, function (err, foundIdea) {
         Idea.find({ display: true }, function (err, allIdeas) {
             res.render('edit', { idea: foundIdea, ideas: allIdeas });
@@ -83,7 +86,7 @@ app.get('/:id/edit', function (req, res) {
 });
 
 // UPDATE IDEA ROUTE
-app.put('/:id', function (req, res) {
+router.put('/:id', function (req, res) {
     // find and update the correct idea
     Idea.findByIdAndUpdate(req.params.id, req.body.idea, function (
         err,
@@ -98,7 +101,7 @@ app.put('/:id', function (req, res) {
 });
 
 // DESTROY IDEA ROUTE
-app.delete('/:id', function (req, res) {
+router.delete('/:id', function (req, res) {
     Idea.findByIdAndRemove(req.params.id, function (err) {
         if (err) {
             res.redirect('/');
@@ -107,3 +110,5 @@ app.delete('/:id', function (req, res) {
         }
     });
 });
+
+module.exports = router;
