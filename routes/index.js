@@ -23,10 +23,15 @@ router.post('/register', function (req, res) {
         username: req.body.username,
         email: req.body.email,
     });
+    var allIdeas = Idea.find({ display: true }, function (err, allIdeas) {
+        if (err) {
+            console.log(err);
+        }
+    });
     User.register(newUser, req.body.password, function (err, User) {
         if (err) {
             console.log(err);
-            return res.render('register');
+            return res.render('register', { ideas: allIdeas });
         }
         passport.authenticate('local')(req, res, function () {
             console.log('You are ready to bake!');
